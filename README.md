@@ -6,7 +6,7 @@
 </p>
 
 # About
-Full Stack Working Amazon Clone app with Admin Dashboard using Flutter and Backend with NodeJs and MongoBD + Atlas.
+Simple Tesla Clone app with custom slider, custom progress bar, custom components.
 
 ## Demo
 ![Tesla_screenshot](https://user-images.githubusercontent.com/3157579/179683160-39fc54f2-4605-4360-a20e-af6ccc8a7690.gif)
