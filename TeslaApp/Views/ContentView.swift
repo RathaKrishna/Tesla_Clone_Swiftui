@@ -269,3 +269,44 @@ struct ReorderButton: View {
     }
 }
 
+
+struct AllSettingsItem: View {
+    var icon: String
+    var text: String
+    var subtitle: String = ""
+    var isActive: Bool = false
+    var body: some View {
+        
+        HStack(alignment: .center, spacing: 2) {
+            Image(systemName: icon)
+                .imageScale(.large)
+                .frame(width: 44, height: 44)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(text)
+                    .font(.body)
+                    .fontWeight(.semibold)
+                    .fixedSize(horizontal: true, vertical: false)
+                if !subtitle.isEmpty {
+                    Text(subtitle.uppercased())
+                        .font(.system(size: 8, weight: .medium))
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+            }
+            .foregroundColor(Color.white)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundColor(Color.white)
+                .opacity(0.6)
+            
+            
+        }
+        .padding(8)
+        .frame(height: 70)
+        .background(isActive ? Color.selectedGridBackgroud : Color.gridBackgroud, in:
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+        )
+        .innerShadow(shape: RoundedRectangle(cornerRadius: 10), color: .white.opacity(0.25), lineWidth: 1, offsetX: 1, offsetY: 1, blur: 1, blendMode: .overlay)
+    }
+}
+
+
