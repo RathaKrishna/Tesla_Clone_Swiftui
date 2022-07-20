@@ -65,6 +65,7 @@ struct ActionItem: View {
 }
 
 
+
 struct AllSettingsItem: View {
     var icon: String
     var text: String
@@ -97,16 +98,9 @@ struct AllSettingsItem: View {
         }
         .padding(8)
         .frame(height: 70)
-        .background(isActive ? Color.selectedGridBackgroud : Color.gridBackgroud)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .overlay {
-            // MARK: Card Border
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(.white.opacity(0.2))
-                .blendMode(.overlay)
-        }
-        .backgroundBlur(radius: 25, opaque: true)
-        
+        .background(isActive ? Color.selectedGridBackgroud : Color.gridBackgroud, in:
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+        )
         .innerShadow(shape: RoundedRectangle(cornerRadius: 10), color: .white.opacity(0.25), lineWidth: 1, offsetX: 1, offsetY: 1, blur: 1, blendMode: .overlay)
         
     }
