@@ -19,7 +19,11 @@ struct LockView: View {
                     Button(action: {
                         self.presentation.wrappedValue.dismiss()
                     }){
-                        GeneralButton(icon: "chevron.left")}
+                        if isLocked {
+                        GeneralButton(icon: "chevron.left")
+                            
+                        }
+                    }
                     Spacer()
                 }
                 .padding(.horizontal)
