@@ -65,7 +65,7 @@ struct ClimateView: View {
             if (isActive) {
                 ClimateWidget(open: $isActive, prgoress: $progress, activeId: $activeId, isActive: $isActive)
                     .zIndex(1)
-                    .transition(.opacity)
+                    .transition(.move(edge: .bottom))
             }
             
             

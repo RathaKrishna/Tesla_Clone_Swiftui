@@ -33,7 +33,7 @@ struct ActionNotification: View {
             }
             .padding(20)
             .foregroundColor(Color.white)
-            .background(Color.background)
+            .background(Color.lockGradient)
             .backgroundBlur(radius: 10, opaque: true)
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .padding()
@@ -176,8 +176,8 @@ struct MediaPlayerWidget: View {
             }
             .padding(20)
             .foregroundColor(Color.white)
-            .background(Color.background)
-            .backgroundBlur(radius: 10, opaque: true)
+            .background(Color.lockGradient)
+            .backgroundBlur(radius: 12, opaque: true)
             .cornerRadius(20, corners: [.topLeft, .topRight])
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -244,8 +244,8 @@ struct ChargingWidget: View {
             }
             .padding(20)
             .foregroundColor(Color.white)
-            .background(Color.background)
-            .backgroundBlur(radius: 10, opaque: true)
+            .background(Color.lockGradient)
+            .backgroundBlur(radius: 2, opaque: true)
             .cornerRadius(20, corners: [.topLeft, .topRight])
         }
         .edgesIgnoringSafeArea(.bottom)

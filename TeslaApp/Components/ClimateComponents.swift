@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Sliders
+
 
 struct KnobWidget: View {
     var body: some View {
@@ -72,8 +74,11 @@ struct ControlWidget: View {
                 .frame(width: 50)
             
             Button(action: {
-                self.activeId = title
-                self.isActive = true
+                withAnimation {
+                    self.activeId = title
+                    self.isActive = true
+                }
+                
             }){
                 Circle()
                     .foregroundColor(Color("Background"))
