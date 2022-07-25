@@ -11,7 +11,7 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 20){
             HStack {
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
