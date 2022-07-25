@@ -8,6 +8,13 @@
 import SwiftUI
 import Sliders
 
+enum Climate: String {
+    case ac = "Ac"
+    case fan = "Fan"
+    case heat = "Heat"
+    case auto = "Auto"
+}
+
 struct ClimateView: View {
     
     @Environment(\.presentationMode) var presentation
@@ -20,7 +27,8 @@ struct ClimateView: View {
     
     
     @State var value = 0.1
-    
+    @State var activeId: String = ""
+    @State var isActive: Bool = false
     
     var body: some View {
         ZStack{
@@ -42,19 +50,32 @@ struct ClimateView: View {
                     .frame(width: 200, height: 200)
                 
                 Spacer()
-                ControlWidget(progress: $progress, title: "Ac", icon: "snowflake", isActive: true)
-                ControlWidget(progress: $fanProgress, title: "Fan", icon: "wind")
-                ControlWidget(progress: $fanProgress, title: "Heat", icon: "humidity.fill")
-                ControlWidget(progress: $fanProgress, title: "Auto", icon: "timer")
+                ScrollView {
+                    VStack(spacing: 50) {
+                ControlWidget(progress: $progress, title: Climate.ac.rawValue, icon: "snowflake", activeId: $activeId, isActive: $isActive)
+                ControlWidget(progress: $progress, title: Climate.fan.rawValue, icon: "wind", activeId: $activeId, isActive: $isActive)
+                ControlWidget(progress: $progress, title: Climate.heat.rawValue, icon: "humidity.fill", activeId: $activeId, isActive: $isActive)
+                ControlWidget(progress: $progress, title: Climate.auto.rawValue, icon: "timer", activeId: $activeId, isActive: $isActive)
+                    }
+                }
                 Spacer()
             }
             .padding()
+            
+            if (isActive) {
+                ClimateWidget(open: $isActive, prgoress: $progress, activeId: $activeId, isActive: $isActive)
+                    .zIndex(1)
+                    .transition(.opacity)
+            }
+            
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.background)
         .foregroundColor(Color.white)
         .navigationBarHidden(true)
     }
+  
     
 }
 
@@ -152,35 +173,105 @@ struct ProgressWidget: View {
 
 struct ControlWidget: View {
     @Binding var progress: Double
+    
     var title: String
     var icon: String
-    var isActive: Bool = false
+    @Binding var activeId: String
+    @Binding var isActive: Bool
     
+    @State var localProgress: Double = 0.0
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Text(title)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
-                .foregroundColor(isActive ? Color.white : Color.white.opacity(0.6))
+                .foregroundColor(self.activeId == title ? Color.white : Color.white.opacity(0.6))
                 .frame(width: 50)
             
-            Button(action: {}){
+            Button(action: {
+                self.activeId = title
+                self.isActive = true
+            }){
                 Circle()
                     .foregroundColor(Color("Background"))
                     .overlay(
                         
                         Image(systemName: icon)
                             .font(.system(size: 23))
-                            .foregroundColor(isActive ? Color("lock_green_1") : Color.white.opacity(0.7))
+                            .foregroundColor(activeId == title ? Color("lock_green_1") : Color.white.opacity(0.7))
                     )
                     .frame(width: 50, height: 50)
                     .shadow(color: Color.white.opacity(0.3), radius: 5, x: 0, y: 0)
             }
-            
-            ProgressWidget(progress: $progress)
-                .allowsHitTesting(isActive)
-                
+            if activeId == title {
+                ProgressWidget(progress: $progress)
+                    
+            }
+            else {
+            ProgressWidget(progress: $localProgress)
+                .allowsHitTesting(false)
+            }
         }
         .padding(.horizontal, 6)
         .foregroundColor(Color.white)
+    }
+}
+
+
+struct ClimateWidget: View {
+    @Binding var open: Bool
+    @Binding var prgoress: Double
+    @Binding var activeId: String
+    @Binding var isActive: Bool
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            VStack(alignment:.leading, spacing: 20){
+                HStack(alignment: .center, spacing: 15) {
+                    Button(action: {
+                        withAnimation {
+                            prgoress = 0.0
+                            open = false
+                            activeId = ""
+                            isActive = false
+                        }
+                    }){
+                    Image(systemName: "power")
+                            .font(.system(size: 20, weight: .bold, design: .default))
+                    }
+                    Spacer()
+                    Image(systemName: "chevron.backward")
+                    Text("\(Int(prgoress * 100))°")
+                        .font(.system(size: 22))
+                    Image(systemName: "chevron.forward")
+                    Spacer()
+                    Image(systemName: "dot.radiowaves.up.forward")
+                }
+                .imageScale(.large)
+                .font(.system(size: 20, weight: .bold, design: .default))
+                
+                
+                //MARK: -
+                Divider()
+                    .background(Color.white)
+                    .opacity(0.4)
+                
+                HStack {
+                    Text("On")
+                    Spacer()
+                    Text("Vent")
+                        .opacity(0.6)
+                }
+                .padding(.vertical)
+               
+                    
+            }
+            .padding(20)
+            .foregroundColor(Color.white)
+            .background(Color.background)
+            .cornerRadius(20, corners: [.topLeft, .topRight])
+            .innerShadow(shape: RoundedRectangle(cornerRadius: 20), color: .white.opacity(0.25), lineWidth: 1, offsetX: 1, offsetY: 1, blur: 1, blendMode: .overlay)
+        }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
