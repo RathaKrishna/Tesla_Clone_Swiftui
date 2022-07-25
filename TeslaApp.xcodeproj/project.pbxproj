@@ -27,6 +27,7 @@
 		08CC3DA8288299B0002DDBCA /* LocationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC3DA7288299B0002DDBCA /* LocationComponents.swift */; };
 		08CFA7F02884FEB40042EB92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7EF2884FEB40042EB92 /* SettingsView.swift */; };
 		08CFA7F22884FF790042EB92 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7F12884FF790042EB92 /* LockView.swift */; };
+		BFEB448A288E89A8005598A8 /* ClimateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB4489288E89A8005598A8 /* ClimateComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		08CC3DA7288299B0002DDBCA /* LocationComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationComponents.swift; sourceTree = "<group>"; };
 		08CFA7EF2884FEB40042EB92 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		08CFA7F12884FF790042EB92 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		BFEB4489288E89A8005598A8 /* ClimateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				08CC3DA3288298A6002DDBCA /* ActionComponents.swift */,
 				08CC3DA7288299B0002DDBCA /* LocationComponents.swift */,
 				08B71ADC288688DA008D120F /* ControlComponents.swift */,
+				BFEB4489288E89A8005598A8 /* ClimateComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				08CC3D862882958A002DDBCA /* ContentView.swift in Sources */,
 				08B71ADD288688DA008D120F /* ControlComponents.swift in Sources */,
 				08CC3DA028829783002DDBCA /* Blur.swift in Sources */,
+				BFEB448A288E89A8005598A8 /* ClimateComponents.swift in Sources */,
 				08CC3D96288296B5002DDBCA /* Extensions.swift in Sources */,
 				08CC3DA2288297B3002DDBCA /* HomeComponents.swift in Sources */,
 				08B71AD42886422C008D120F /* Utils.swift in Sources */,
