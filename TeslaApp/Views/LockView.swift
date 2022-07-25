@@ -31,25 +31,28 @@ struct LockView: View {
                 Text(isLocked ? "Hi" : "")
                     .font(.title)
                     .opacity(0.7)
-                    .transition(.slide)
-                    .animation(.spring(), value: isLocked)
-                    
-                    
-            
+                    .transition(.move(edge: .trailing))
+               
+
                 Text(isLocked ? "Welcome back" : "")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .animation(.interactiveSpring(), value: isLocked)
+                    .transition(.move(edge: .trailing))
+                   
                     
                 Image(isLocked ? "lock_bg" : "unlock_bg")
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 300)
-                    .animation(.interactiveSpring(), value: isLocked)
+                    .transition(.move(edge: .bottom))
+                   
                 
                 Spacer()
                 
                 Button(action: {
-                    isLocked = !isLocked
+                    withAnimation {
+                        isLocked = !isLocked
+                    }
+                    
                 }){
                 HStack(spacing: 40) {
                     Text(isLocked ? "Lock" : "Unlock")
