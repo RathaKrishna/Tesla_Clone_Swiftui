@@ -8,6 +8,11 @@
 Tesla app clone with Advanced SwiftUI components.
 
 ## Demo
+
+#### Updated UI
+![Screen Recording 2022-07-26 at 10 13 06](https://user-images.githubusercontent.com/3157579/180909021-cf87dfff-aacc-49a0-98f9-69cd63c8fa16.gif)
+
+#### App UI
 ![Tesla_screenshot](https://user-images.githubusercontent.com/3157579/179683160-39fc54f2-4605-4360-a20e-af6ccc8a7690.gif)
 
 ### Features
