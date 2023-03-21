@@ -57,6 +57,8 @@ struct ActionItem: View {
                 .font(.system(size: 12, weight: .semibold, design: .default))
                 .multilineTextAlignment(.center)
         }
+        .modifier(ClearColor())
+        // PENDO CHANGE: Adding background
     }
 }
 

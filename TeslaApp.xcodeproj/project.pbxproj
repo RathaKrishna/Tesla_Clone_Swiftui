@@ -28,7 +28,21 @@
 		08CFA7F02884FEB40042EB92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7EF2884FEB40042EB92 /* SettingsView.swift */; };
 		08CFA7F22884FF790042EB92 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7F12884FF790042EB92 /* LockView.swift */; };
 		BFEB448A288E89A8005598A8 /* ClimateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB4489288E89A8005598A8 /* ClimateComponents.swift */; };
+		E108266529C9FDD000428A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108266429C9FDD000428A02 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E108269829CA052E00428A02 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0890996528855F29000C7960 /* ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateView.swift; sourceTree = "<group>"; };
@@ -52,6 +66,8 @@
 		08CFA7EF2884FEB40042EB92 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		08CFA7F12884FF790042EB92 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		BFEB4489288E89A8005598A8 /* ClimateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateComponents.swift; sourceTree = "<group>"; };
+		E108266429C9FDD000428A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E108269929CA060E00428A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,7 @@
 			children = (
 				08CC3D822882958A002DDBCA /* TeslaApp */,
 				08CC3D812882958A002DDBCA /* Products */,
+				E108269529CA052E00428A02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +102,7 @@
 		08CC3D822882958A002DDBCA /* TeslaApp */ = {
 			isa = PBXGroup;
 			children = (
+				E108269929CA060E00428A02 /* Info.plist */,
 				08CC3D94288296A8002DDBCA /* Others */,
 				08CC3D932882969B002DDBCA /* Models */,
 				08CC3D9228829694002DDBCA /* Components */,
@@ -92,6 +110,7 @@
 				08CC3D832882958A002DDBCA /* TeslaAppApp.swift */,
 				08CC3D872882958C002DDBCA /* Assets.xcassets */,
 				08CC3D892882958C002DDBCA /* Preview Content */,
+				E108266429C9FDD000428A02 /* AppDelegate.swift */,
 			);
 			path = TeslaApp;
 			sourceTree = "<group>";
@@ -149,6 +168,13 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		E108269529CA052E00428A02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +185,7 @@
 				08CC3D7C2882958A002DDBCA /* Sources */,
 				08CC3D7D2882958A002DDBCA /* Frameworks */,
 				08CC3D7E2882958A002DDBCA /* Resources */,
+				E108269829CA052E00428A02 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +254,7 @@
 			files = (
 				08CC3D9A2882970E002DDBCA /* ActionModel.swift in Sources */,
 				08B71AD6288642B8008D120F /* CustomSlider.swift in Sources */,
+				E108266529C9FDD000428A02 /* AppDelegate.swift in Sources */,
 				08CC3DA4288298A6002DDBCA /* ActionComponents.swift in Sources */,
 				0890996628855F29000C7960 /* ClimateView.swift in Sources */,
 				08CC3D862882958A002DDBCA /* ContentView.swift in Sources */,
@@ -373,6 +401,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TeslaApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeslaApp/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow app to use your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App uses your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -403,6 +432,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TeslaApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeslaApp/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow app to use your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App uses your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

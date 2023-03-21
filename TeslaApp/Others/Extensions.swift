@@ -27,6 +27,8 @@ extension Color {
     static let mapBackground = LinearGradient(gradient: Gradient(colors: [Color("Background 1"), Color("Background 1").opacity(0.2), Color.clear, Color.clear]), startPoint: .top, endPoint: .bottom)
     
     static let lockGradient = LinearGradient(gradient: Gradient(colors: [.purple, Color("lock_green_1").opacity(0.6),Color("lock_green_2").opacity(0.6)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    
+    static let almostClear = Color(red: 0.1, green: 0.1, blue: 0.1).opacity(0.001)
 }
 
 extension View {
@@ -89,5 +91,11 @@ extension View {
     // the function is receiving a cornerRaduis type CGFloat and its value is 30 so it will be the Defaul value.
     func strokeStyle(cornerRadius: CGFloat = 30) -> some View {
         modifier(ViewStroke(cornerRadius: cornerRadius))
+    }
+}
+
+struct ClearColor: ViewModifier {
+    func body(content: Content) -> some View {
+        content.background(Color.almostClear, ignoresSafeAreaEdges: [])
     }
 }

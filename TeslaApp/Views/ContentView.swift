@@ -123,6 +123,8 @@ struct VoiceCommandButton: View{
                         .clipShape(Circle())
                         .padding()
                         .shadow(radius: 10)
+                        .modifier(ClearColor())
+                        //PENDO CHANGE: Adding background 
                 }
             }
         }

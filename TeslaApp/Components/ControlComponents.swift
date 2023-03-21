@@ -12,11 +12,13 @@ struct IconButton: View {
     var text: String
     var body: some View {
         Button(action: {}){
+            //PENDO CHANGE: The labels should be inside Button to make them all clickable
             Label(text, systemImage: icon)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(Color.white.opacity(0.09))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 44)
-        .background(Color.white.opacity(0.09))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        
     }
 }

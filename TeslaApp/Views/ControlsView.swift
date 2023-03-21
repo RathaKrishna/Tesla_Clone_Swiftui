@@ -48,8 +48,6 @@ struct ControlsView: View {
         .backgroundBlur(radius: 10, opaque: true)
         .foregroundColor(Color.white)
         .navigationBarHidden(true)
-        
-        
     }
 }
 
