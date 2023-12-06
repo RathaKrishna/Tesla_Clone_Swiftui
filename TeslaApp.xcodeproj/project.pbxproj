@@ -27,6 +27,7 @@
 		08CC3DA8288299B0002DDBCA /* LocationComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC3DA7288299B0002DDBCA /* LocationComponents.swift */; };
 		08CFA7F02884FEB40042EB92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7EF2884FEB40042EB92 /* SettingsView.swift */; };
 		08CFA7F22884FF790042EB92 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CFA7F12884FF790042EB92 /* LockView.swift */; };
+		424B48152B20AFC4006C6BBD /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = 424B48142B20AFC4006C6BBD /* Pendo */; };
 		BFEB448A288E89A8005598A8 /* ClimateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB4489288E89A8005598A8 /* ClimateComponents.swift */; };
 		E108266529C9FDD000428A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108266429C9FDD000428A02 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08B71ADB288649D7008D120F /* Sliders in Frameworks */,
+				424B48152B20AFC4006C6BBD /* Pendo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +196,7 @@
 			name = TeslaApp;
 			packageProductDependencies = (
 				08B71ADA288649D7008D120F /* Sliders */,
+				424B48142B20AFC4006C6BBD /* Pendo */,
 			);
 			productName = TeslaApp;
 			productReference = 08CC3D802882958A002DDBCA /* TeslaApp.app */;
@@ -225,6 +228,7 @@
 			mainGroup = 08CC3D772882958A002DDBCA;
 			packageReferences = (
 				08B71AD9288649D7008D120F /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
+				424B48132B20AFC4006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */,
 			);
 			productRefGroup = 08CC3D812882958A002DDBCA /* Products */;
 			projectDirPath = "";
@@ -485,6 +489,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		424B48132B20AFC4006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pendo-io/pendo-mobile-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -492,6 +504,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08B71AD9288649D7008D120F /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
 			productName = Sliders;
+		};
+		424B48142B20AFC4006C6BBD /* Pendo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 424B48132B20AFC4006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */;
+			productName = Pendo;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

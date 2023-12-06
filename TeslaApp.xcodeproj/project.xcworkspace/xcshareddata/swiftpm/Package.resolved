@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "pendo-mobile-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pendo-io/pendo-mobile-sdk",
+      "state" : {
+        "revision" : "6ab0a6a63d5fcd5545ccf9925d7f9f5f3dbc0fb3",
+        "version" : "3.0.0"
+      }
+    },
+    {
       "identity" : "swiftui-sliders",
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:spacenation/swiftui-sliders.git",

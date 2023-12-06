@@ -14,7 +14,7 @@ struct TeslaAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .enableSwiftUI()
+                .pendoEnableSwiftUI()
                 .onOpenURL(perform: handleURL)
                 // PENDO CHANGE: Integration
         }
